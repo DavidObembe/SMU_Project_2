@@ -1,6 +1,6 @@
 #ryan addition
 config.js
-*.csv
+US_Accidents_June20.csv
 *.sh
 Untitled.ipynb
 
