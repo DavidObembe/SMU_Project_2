@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>US Accidents: Map</title>
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Import Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css" integrity="sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz" crossorigin="anonymous">
+    <!-- Import Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Import Marker Cluster CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+    <!-- Import Style CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!-- Import Bootstap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Import Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <!-- Import Leaflet API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+    <!-- Import Marker Cluster JS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <!-- Leaflet Heatmap Plugin-->
+    <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+    <!-- Import Ajax JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import D3 JS-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Application JavaScript -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="assets/dashboard.svg" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="leaflet.html">Geograhical Map</a>
+                            <a class="dropdown-item" href="bar_chart.html">Bar Chart</a>
+                            <a class="dropdown-item" href="scatter_plot.html">Scatter Plot</a>
+                            <a class="dropdown-item" href="line_graph.html">Line Graph</a>
+                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Jumbotron -->
+    <!-- <div class="row">
+        <div class="col-md-12" style="margin-top:25px; margin-bottom: 25px;">
+            <div class="jumbotron jumbotron-fluid">
+                <h1 class="display-3">US Traffic Accidents</h1>
+                <p class="lead">Below is a geographical representation of traffic accidents within the US spanning March 1st 2020 to June 30th 2020.</p>
+                <hr class="my-4">
+                <p></p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="https://www.kaggle.com/sobhanmoosavi/us-accidents" target="_blank" role="button">Kaggle Dataset</a>
+                </p>
+            </div>
+        </div>
+    </div> -->
+    <br>
+    <br>
+    <br>
+    <!-- Overview -->
+    <div class="container marketing">
+        <div class="row">
+
+            <!-- Overview -->
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <!-- <h2 class="featurette-heading">Distribution of Accidents across America. <span class="text-muted">It'll blow your mind.</span></h2> -->
+                    <p class="lead">Data was obtained from a countrywide car accident dataset which covered 49 states of the USA. The accident data ranged from February 2016 to June 2020, were gotten from two traffic APIs and contained in depth information on weather
+                        conditions, time of accident, duration of accident and severity of accident(on a scale of 1-5) —all of which were captured by US and state departments of transportation, law enforcement agencies and traffic cameras and sensors.</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="rounded-circle" class="img-fluid" src="assets/traffic_scope_450_450.jpg" alt="Traffic Scope" width="300" height="300">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+            <!-- /END THE FEATURETTES -->
+        </div>
+
+    </div>
+
+    <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
+        <div style="text-align: left;">
+            <!-- Dropdown by Month -->
+            <label for="monthFilter">Filter Accidents by Month</label>
+            <select id="monthFilter" name="monthFilter">
+                <option selected>All</option>
+                <option>March 2020</option>
+                <option>April 2020</option>
+                <option>May 2020</option>
+                <option>June 2020</option>
+             </select>
+
+            <!-- Dropdown by Severity -->
+            <label for="sevFilter">Filter Accident by Severity:</label>
+            <select id="sevFilter" name="sevFilter">
+                <option value="-1" selected>All</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- Insert Leaflet Map -->
+    <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
+        <div style="text-align: center;">
+            <h1></h1>
+        </div>
+        <br>
+        <div id="mapAccident" class="container-fluid"></div>
+</body>
+
+</html>
