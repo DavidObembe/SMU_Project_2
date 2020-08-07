@@ -18,6 +18,8 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <!-- Import Plotly -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Import Lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
 
 </head>
 
@@ -66,11 +68,12 @@
             <h2>United States accidents by state for the last 4 months</h2>
             <label for="monthFilter">Select A Month:</label>
             <select id="monthFilter">
+                <option value="4 month total">all month total</option>
                 <option value="March">March</option>
                 <option value="April">April</option>
                 <option value="May">May</option>
                 <option value="June">June</option>
-                <option value="4 month total">all month total</option>
+                
             </select>
         </div>
         <!-- 2019 barchart -->
@@ -79,12 +82,13 @@
             <h2>United States accidents by state pre-covid data</h2>
             <label for="monthFilter2019">Select A Month:</label>
             <select id="monthFilter2019">
+                <option value="4 month total">all month total</option>
                 <option value="March">March</option>
                 <option value="April">April</option>
                 <option value="May">May</option>
                 <option value="June">June</option>
                 <option value="July">July</option>
-                <option value="4 month total">all month total</option>
+                
             </select>
         </div>
     </div>
