@@ -56,7 +56,7 @@ function makeResponsive() {
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
     // Read CSV
-    d3.csv("dayNight.csv").then(function(accidentData) {
+    d3.csv("static/data/dayNight.csv").then(function(accidentData) {
         console.log(accidentData);
 
         // create Start_Time parser

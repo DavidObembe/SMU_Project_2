@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>US Accidents: Bar Plot</title>
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Import Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css" integrity="sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz" crossorigin="anonymous">
+    <!-- Import Bootstap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Import Style CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Import Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="assets/dashboard.svg" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="leaflet.html">Geograhical Map</a>
+                            <a class="dropdown-item" href="bar_chart.html">Bar Chart</a>
+                            <a class="dropdown-item" href="scatter_plot.html">Scatter Plot</a>
+                            <a class="dropdown-item" href="line_graph.html">Line Graph</a>
+                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Insert Leaflet Map -->
+    <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
+        <div style="text-align: center;">
+            <h1></h1>
+        </div>
+        <br>
+        <div id="mapAccident" class="container-fluid"></div>
+
+        <!-- 2020 barchart -->
+        <div id="BarAccident" class="container-fluid"> </div>
+        <div style="text-align: center;">
+            <h2>United States accidents by state for the last 4 months</h2>
+            <label for="monthFilter">Select A Month:</label>
+            <select id="monthFilter">
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="4 month total">all month total</option>
+            </select>
+        </div>
+        <!-- 2019 barchart -->
+        <div id="BarAccident2019" class="container-fluid"> </div>
+        <div style="text-align: center;">
+            <h2>United States accidents by state pre-covid data</h2>
+            <label for="monthFilter2019">Select A Month:</label>
+            <select id="monthFilter2019">
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="4 month total">all month total</option>
+            </select>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/js/bar_chart_DO.js"></script>
+    <script type="text/javascript" src="static/js/bar_chart_DO_2019.js"></script>
+</body>
+
+</html>
