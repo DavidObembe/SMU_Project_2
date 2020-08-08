@@ -1,8 +1,10 @@
 d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
 
     //d is data
-    console.log(d);
 
+
+
+    //convert all string numbers to int numbers
     function convertIntObj(obj) {
         const res = {}
         for (const key in obj) {
@@ -19,7 +21,6 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
     console.log('Object result', result);
     d = Object.values(result);
 
-    console.log(d)
 
 
     //functions to obtain day and night data
@@ -35,23 +36,46 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
     var dayData = d.filter(dayFfunction);
     var nightData = d.filter(nightFfunction);
 
-    console.log(dayData);
-    console.log(nightData);
+    //sum of all data
+    var totalDay = [];
+    Array.from(new Set(dayData.map(x => x.State))).forEach(x => {
+
+        totalDay.push(dayData.filter(y => (y.State === x)).reduce((output, item) => {
+            let val = output[x] === undefined ? 0 : output[x];
+            output[x] = (item.Accident_count + val)
+            return output;
+        }, {}));
+    })
+
+    var totalNight = [];
+    Array.from(new Set(nightData.map(x => x.State))).forEach(x => {
+
+        totalNight.push(nightData.filter(y => (y.State === x)).reduce((output, item) => {
+            let val = output[x] === undefined ? 0 : output[x];
+            output[x] = (item.Accident_count + val);
+            return output;
+        }, {}));
+    })
+
+
+    console.log(totalDay);
+    var states = [];
+    var accidentsum = [];
+    var accidentsumNight = [];
+    totalDay.forEach(day => states.push(Object.keys(day)[0]));
+    totalDay.forEach(day => accidentsum.push(Object.values(day)[0]));
+    totalNight.forEach(day => accidentsumNight.push(Object.values(day)[0]));
+
 
     // collect x and y values
-    var dayX = dayData.map(x => x.State);
-    var dayY = dayData.map(x => x.Accident_count);
+    var dayX = states;
+    var dayY = accidentsum;
 
 
-    var nightX = nightData.map(x => x.State);
-    var nightY = nightData.map(x => x.Accident_count);
+    var nightX = states;
+    var nightY = accidentsumNight;
 
 
-
-    console.log(nightX);
-    console.log(nightY);
-    console.log(dayX);
-    console.log(dayY);
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     //I zip graphDataY and graphDataX
@@ -60,7 +84,6 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
         return [e, dayY[i], nightX[i], nightY[i]];
     });
 
-    console.log(zippedData);
     //sort zip
     //array [0] is the sample_values and i am sorting in descending order of sample values
 
@@ -72,12 +95,12 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
     var sdayY = sorted_zip.map(x => x[1]);
     var snightX = sorted_zip.map(x => x[2]);
     var snightY = sorted_zip.map(x => x[3]);
-    console.log(sdayX);
-    console.log(sdayY);
-    console.log(snightX);
+
     // return (sdayX, sdayY, snightX, snightY)
 
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -116,6 +139,8 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
     july7 = sortByKey(july7, "Accident_count");
     d = sortByKey(d, "Accident_count");
 
+
+
     // Bar chart initialisation 
     function init() {
         // sortIt();
@@ -123,19 +148,58 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
             x: sdayX,
             y: sdayY,
             name: 'day accidents ',
-            type: 'bar'
+            type: 'bar',
+            marker: {
+                color: 'rgb(128,128,128)'
+            }
+
         };
 
         var nightTrace = {
             x: snightX,
             y: snightY,
             name: 'night accidents',
-            type: 'bar'
+            type: 'bar',
+            marker: {
+                color: 'rgb(230, 230,0)'
+            }
+            // hoverinfo: 'y'
         };
 
         var data = [dayTrace, nightTrace];
 
-        var layout = { barmode: 'stack' };
+        var layout = {
+            barmode: 'stack',
+            title: 'Number of Accidents by State Before the Pandemic',
+            autosize: true,
+            width: 1000,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            font: {
+                family: 'Raleway, sans-serif'
+            },
+            xaxis: {
+                title: 'state',
+                type: 'category'
+            },
+            yaxis: {
+                title: 'Accident Count'
+
+            },
+            showlegend: true,
+            legend: {
+                x: 1,
+                xanchor: 'right',
+                y: 1
+            }
+
+        };
 
         Plotly.newPlot('BarAccident2019', data, layout);
     }
@@ -152,8 +216,6 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
         // Assign the value of the dropdown menu option to a variable
         var selectedOption = dropdownMenu.property("value");
 
-
-        console.log(selectedOption);
 
         // Initialize an empty array for the country's data
         var monthlyData = [];
@@ -173,13 +235,10 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
         };
         // Call function to update the chart
         // updatePlotly(data);
-        console.log(monthlyData);
 
         var dayData = monthlyData.filter(dayFfunction);
         var nightData = monthlyData.filter(nightFfunction);
 
-        console.log(dayData);
-        console.log(nightData);
 
         // collect x and y values
         var dayX = dayData.map(x => x.State);
@@ -188,26 +247,62 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
         var nightX = nightData.map(x => x.State);
         var nightY = nightData.map(x => x.Accident_count);
 
-        // console.log(nightX)
-
         // replot the graph
         var dayTrace = {
             x: dayX,
             y: dayY,
             name: 'day accidents ',
-            type: 'bar'
+            type: 'bar',
+            marker: {
+                color: 'rgb(128,128,128)'
+            }
+
         };
 
         var nightTrace = {
             x: nightX,
             y: nightY,
             name: 'night accidents',
-            type: 'bar'
+            type: 'bar',
+            marker: {
+                color: 'rgb(230, 230,0)'
+            }
         };
 
         var data = [dayTrace, nightTrace];
 
-        var layout = { barmode: 'stack' };
+        var layout = {
+            barmode: 'stack',
+            title: 'Number of Accidents by State Before the Pandemic',
+            autosize: true,
+            width: 1000,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
+            font: {
+                family: 'Raleway, sans-serif'
+            },
+            xaxis: {
+                title: 'state',
+                type: 'category'
+            },
+            yaxis: {
+                title: 'Accident Count'
+
+            },
+            showlegend: true,
+            legend: {
+                x: 1,
+                xanchor: 'right',
+                y: 1
+            }
+
+        };
 
         Plotly.newPlot('BarAccident2019', data, layout);
 
@@ -215,6 +310,11 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
     }
 
     //this is my new bar function that I will call everytime a dropdown is selected
+
+
+
+
+
 
 
 
