@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accident Severity Over Time</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style type="text/css">
+        html,
+        body,
+        #container {
+            height: 100%;
+        }
+        
+        body,
+        #container {
+            overflow: hidden;
+            margin: 0;
+        }
+        
+        #iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+
+    <!-- <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
+        <div style="text-align: left;">
+            <label for="timeFilter">Filter Severity by Day or Night</label>
+            <select id="MonthFilter" name="timeFilter">
+            <option value="Day" selected>Day</option>
+            <option value="Night">Night</option>
+        </select>
+        </div>
+    </div> -->
+    <div id="Plot" class="container-fluid"> </div>
+    <div style="text-align: center;">
+        <h2>United States Accident Severity Over Time</h2>
+        <!-- <label for="monthFilter">Time of Day:</label>
+        <select id="monthFilter">
+            <option value="4 month total">all month total</option>
+            <option value="Day">March</option>
+            <option value="Night">April</option>
+        </select> -->
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Points of Interest</h4>
+                <p class="card-text">-The majority of accidents occur during the day, almost 4x as many as occur at night. -Level 2 severity was the most frequently occured severity level, accounting for roughly 75% of the accidents. -There are multiple reasons for the daytime
+                    skew- Majority of driving is done during the day</p>
+
+            </div>
+        </div>
+        <!-- </div>
+    <div class="container-md"></div>
+    <h2> Points of interest:
+    </h2>
+    <p>-The majority of accidents occur during the day, almost 4x as many as occur at night.</p>
+    <p>-Level 2 severity was the most frequently occured severity level, accounting for roughly 75% of the accidents.</p>
+    <p>-There are multiple reasons for the daytime skew- Majority of driving is done during the day</p>
+    </div>
+
+    <div class="container-lg"> -->
+
+        <div class="card">
+            <div class="card-body">Data Summary Table</div>
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Level of Severity</th>
+                            <th>Severity Count</th>
+                            <th>Average Severity</th>
+                            <th>Civil Twilight Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>1</td>
+                            <td>12167</td>
+                            <td>Sacramento</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2
+                            </th>
+                            <td>2</td>
+                            <td>98120</td>
+                            <td>Boynton Beach</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3
+                            </th>
+                            <td>3</td>
+                            <td>13555</td>
+                            <td>Schenectady</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4
+                            </th>
+                            <td>4</td>
+                            <td>5579</td>
+                            <td>Schenectady</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="style.css"></script>
+<!-- <script type="text/css" src="style.css"></script> -->
+<script type="text/javascript" src="../static/app.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+
+</html>
