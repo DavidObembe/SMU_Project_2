@@ -161,7 +161,7 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
             name: 'night accidents',
             type: 'bar',
             marker: {
-                color: 'rgb(255,99,71)'
+                color: 'rgb(230, 230,0)'
             }
             // hoverinfo: 'y'
         };
@@ -170,7 +170,17 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
 
         var layout = {
             barmode: 'stack',
-            title: 'Number of Accidents by State',
+            title: 'Number of Accidents by State Before the Pandemic',
+            autosize: true,
+            width: 1000,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
             font: {
                 family: 'Raleway, sans-serif'
             },
@@ -181,6 +191,12 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
             yaxis: {
                 title: 'Accident Count'
 
+            },
+            showlegend: true,
+            legend: {
+                x: 1,
+                xanchor: 'right',
+                y: 1
             }
 
         };
@@ -249,7 +265,7 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
             name: 'night accidents',
             type: 'bar',
             marker: {
-                color: 'rgb(255,99,71)'
+                color: 'rgb(230, 230,0)'
             }
         };
 
@@ -257,7 +273,17 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
 
         var layout = {
             barmode: 'stack',
-            title: 'Number of Accidents by State',
+            title: 'Number of Accidents by State Before the Pandemic',
+            autosize: true,
+            width: 1000,
+            height: 500,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 100,
+                t: 100,
+                pad: 4
+            },
             font: {
                 family: 'Raleway, sans-serif'
             },
@@ -268,7 +294,14 @@ d3.csv("./static/data/monthlyDayNightData_2019.csv").then(function(d) {
             yaxis: {
                 title: 'Accident Count'
 
+            },
+            showlegend: true,
+            legend: {
+                x: 1,
+                xanchor: 'right',
+                y: 1
             }
+
         };
 
         Plotly.newPlot('BarAccident2019', data, layout);

@@ -53,44 +53,79 @@
         </nav>
     </header>
 
+    <br>
+    <br>
+    <br>
+    <div class="jumbotron">
 
-    <!-- Insert Leaflet Map -->
+        <h1 class="Text_align">
+            ‘Alarming increase’: California traffic accidents surge above pre-pandemic levels
+        </h1>
+
+        <h6>
+            <p>
+                From our data, the safest cities in terms of number of accidents during the pandemic have been Wyoming(WY), Vermont(VT), Maine(ME) and West Virginia(WV). Whereas the top five cities with the most accidents have been California(CA), Florida(FL), Texas(TX),North
+                Carolina(NC) and South Carolina(SC). In almost all the states, majority of the accidents occurred during the day.
+            </p>
+            <p>
+                When we compared the data to the same months before the pandemic(from March to June), we observed that for majority of the states(especially the cities with generally low accident counts), there were fewer accidents. However, California and Florida absolutely
+                shattered this rule as California's accidents almost doubled during the pandemic whereas there was a slight increase for Florida.</p>
+
+        </h6>
+
+    </div>
+
+
+    <!-- Insert Bar Chart -->
     <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
-        <div style="text-align: center;">
-            <h1></h1>
-        </div>
         <br>
-        <div id="mapAccident" class="container-fluid"></div>
+        <div class="row">
+            <!-- 2020 barchart -->
+            <div class="card bg-light mb-3 " style="margin: auto;">
+                <div class="card-body">
+                    <div class="col-md-8 col-sm-12">
+                        <div style="text-align: left;">
+                            <!-- <h3>United States road accidents by state post-pandemic data</h3> -->
+                            <label for="monthFilter">Select A Month:</label>
+                            <select id="monthFilter">
+                        <option value="4 month total">all month total</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                  </select>
+                        </div>
+                        <div id="BarAccident" class="container-fluid"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!-- 2020 barchart -->
-        <div id="BarAccident" class="container-fluid"> </div>
-        <div style="text-align: center;">
-            <h2>United States accidents by state for the last 4 months</h2>
-            <label for="monthFilter">Select A Month:</label>
-            <select id="monthFilter">
-                <option value="4 month total">all month total</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                
-            </select>
-        </div>
         <!-- 2019 barchart -->
-        <div id="BarAccident2019" class="container-fluid"> </div>
-        <div style="text-align: center;">
-            <h2>United States accidents by state pre-covid data</h2>
-            <label for="monthFilter2019">Select A Month:</label>
-            <select id="monthFilter2019">
-                <option value="4 month total">all month total</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                
-            </select>
+        <div class="row">
+            <div class="card bg-light mb-3" style="margin: auto;">
+                <div class="col-md-8 col-sm-12">
+                    <div class="card-body">
+
+                        <div style="text-align: left;">
+                            <!-- <h3>United States accidents by state pre-covid data</h3> -->
+                            <label for="monthFilter2019">Select A Month:</label>
+                            <select id="monthFilter2019">
+                            <option value="4 month total">all month total</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                    
+                        </select>
+                        </div>
+                        <div id="BarAccident2019" class="container-fluid"> </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
     <script type="text/javascript" src="static/js/bar_chart_DO.js"></script>
     <script type="text/javascript" src="static/js/bar_chart_DO_2019.js"></script>
