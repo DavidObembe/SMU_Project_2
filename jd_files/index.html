@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Accident Data</title>
+    <style>
+        #mapid {
+            height: 450px;
+            width: 1200px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <h1>Accident Data Dashboard</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="well well-sm">
+                    <h5>States:</h5><select id="selDataset" onchange="doDropDownList1(this.value)"></select></div>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+
+            <div class="col-md-8 align-self">
+                <div id="map"></div>
+
+            </div>
+            <div class="col-md-4">
+
+
+                <div id="table"></div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <h3>Top 5 States with in Accidents</h3>
+                        <div id="pie"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="well well-sm">
+
+                        <div id="weather"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="well well-sm">
+                        <div id="time"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div id="mapid"></div>
+                <script>
+                    var mymap = L.map('mapid').setView([32.845577, -96.771859], 4);
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 13,
+                        minZoom: 4,
+                        id: 'mapbox/streets-v11',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        accessToken: 'pk.eyJ1IjoiamRpbGxpZ2FyZCIsImEiOiJja2N2NjBoZXowMTVrMzBucjRwNGI0a3RnIn0.jadzxPq3-0p3jYMONiLRvA'
+                    }).addTo(mymap);
+                </script>
+            </div>
+            <div class="col-md-6">
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 align-self-center">
+                <div class="well well-sm">
+                    <div id="road"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='row'>
+
+            <div id='myDiv'></div>
+
+        </div>
+
+        <div class='row'>
+
+            <div id="my_dataviz"></div>
+
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="./static/js/app.js"></script>
+
+
+</body>
+
+</html>
