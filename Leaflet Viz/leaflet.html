@@ -94,13 +94,14 @@
 
 
     <!-- Filters -->
+    <h1 style="text-align: center;">Distribution of Accidents across the United States</h1>
     <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
         <div style="text-align: left;">
             <!-- Dropdown by Month -->
             <label for="monthFilter">Filter Accidents by Month</label>
             <select id="monthFilter" name="monthFilter">
-                <option selected>All</option>
-                <option>March 2020</option>
+                <option >All</option>
+                <option selected>March 2020</option>
                 <option>April 2020</option>
                 <option>May 2020</option>
                 <option>June 2020</option>
@@ -109,8 +110,8 @@
             <!-- Dropdown by Severity -->
             <label for="sevFilter">Filter Accident by Severity:</label>
             <select id="sevFilter" name="sevFilter">
-                <option value="-1" selected>All</option>
-                <option value="4">4</option>
+                <option value="-1">All</option>
+                <option value="4" selected>4</option>
                 <option value="3">3</option>
                 <option value="2">2</option>
                 <option value="1">1</option>
@@ -122,7 +123,6 @@
     <!-- Insert Leaflet Map -->
     <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
         <div style="text-align: center;">
-            <h1></h1>
         </div>
         <br>
         <div id="mapAccident" class="container-fluid"></div>

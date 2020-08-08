@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    makeMap("All", -1);
+    makeMap("March 2020", 4);
 
     //Event Listener to capture the month
     $('#monthFilter, #sevFilter').change(function() {
@@ -63,7 +63,7 @@ function makeMap(month, accidentSev) {
     });
 
     // Store our API endpoint as sourceCSV
-    var sourceCSV = "static/data/last_6_months.csv";
+    var sourceCSV = "static/data/last_4_months.csv";
 
     d3.csv(sourceCSV).then(function(data) {
         // console.log(data);
@@ -154,9 +154,7 @@ function makeMap(month, accidentSev) {
 
         // Create a layer control, containing our baseMaps and overlayMaps, and add them to the map
         myMap.addLayer(markers);
-        L.control.layers(baseMaps, overlayMaps, {
-            collapsed: false
-        }).addTo(myMap);
+        L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
     });
 }
