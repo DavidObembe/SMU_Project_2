@@ -8,10 +8,12 @@
     <title>Accident Severity Over Time</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Gauge Charts Day & Night</title>
+
 </head>
 
 <body>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style type="text/css">
         html,
@@ -78,13 +80,13 @@
                             <tr>
                                 <th scope="row ">1</th>
                                 <td>12167</td>
-                                <td>.094%</td>
+                                <td>.094</td>
                             </tr>
                             <tr>
                                 <th scope="row ">2
                                 </th>
                                 <td>98120</td>
-                                <td>.76%</td>
+                                <td>.76</td>
                             </tr>
                             <tr>
                                 <th scope="row ">3
@@ -96,7 +98,7 @@
                                 <th scope="row ">4
                                 </th>
                                 <td>5579</td>
-                                <td>.043%</td>
+                                <td>.043</td>
                             </tr>
                         </tbody>
                     </table>
@@ -115,17 +117,123 @@
     </div>
 
     <div class="container-lg "> -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="bg-primary">
+                    <div class="col-md-6 py-2">
+                        <span class="badge badge-dark">Chart-JS.com</span>
+                    </div>
+                    <div class="col-md-6 offset-md-3 my-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="pt-3 text-center">Day Chart</h1>
+                                <hr>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="myChart1"></canvas>
+                            </div>
+                        </div>
+                    </div>
 
-</body>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
-</html>
+                    <script>
+                        var ctx = document.getElementById('myChart1').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
 
-<script src="https://d3js.org/d3.v5.min.js "></script>
-<script src="style.css "></script>
-<!-- <script type="text/css " src="style.css "></script> -->
-<script type="text/javascript " src="../static/app.js "></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js "></script>
+                            // The data for our dataset
+                            data: {
+                                labels: ["Severity 1", "Severity 2", "Severity 3", "Severity 4"],
+                                datasets: [{
+                                    label: "Day Chart",
+                                    backgroundColor: ['rgb(0, 99, 132)', 'green', 'red', 'yellow', 'orange'],
+                                    borderColor: '#fff',
+                                    data: [24172, 199884, 65786, 12070],
+                                }]
+                            },
 
+                            // Configuration options go here
+                            options: {
+                                circumference: 1 * Math.PI,
+                                rotation: 1 * Math.PI,
+                                cutoutPercentage: 90
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-6">
+                <div class="bg-primary">
+                    <div class="col-md-6 py-2">
+                        <span class="badge badge-dark">Chart-JS.com</span>
+                    </div>
+                    <div class="col-md-6 offset-md-3 my-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="pt-3 text-center">Night Chart
+                                    <h1>
+                                        <hr>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+                    <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            // The type of chart we want to create
+                            type: 'doughnut',
+
+                            // The data for our dataset
+                            data: {
+                                labels: ["Severity 1", "Severity 2", "Severity 3", "Severity 4"],
+                                datasets: [{
+                                    label: "Night Chart",
+                                    backgroundColor: ['rgb(0, 99, 132)', 'green', 'red', 'yellow', 'orange'],
+                                    borderColor: '#fff',
+                                    data: [3810, 38404, 12055, 3884],
+                                }]
+                            },
+
+
+                            // Configuration options go here
+                            options: {
+                                circumference: 1 * Math.PI,
+                                rotation: 1 * Math.PI,
+                                cutoutPercentage: 90
+                            }
+                        });
+                        -- >
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script src="https://d3js.org/d3.v5.min.js ">
+        </script>
+        <script src="style.css "></script>
+        <!-- <script type="text/css " src="style.css "></script> -->
+        <script type="text/javascript " src="../static/app.js "></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js "></script>
+
+        </script>
+    </div>
+    </div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js ">
+    </script>
+    <script src="style.css "></script>
+    <!-- <script type="text/css " src="style.css "></script> -->
+    <script type="text/javascript " src="../static/app.js "></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js "></script>
 </body>
 
 </html>
