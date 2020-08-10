@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>US Accidents: Bar Plot</title>
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Import Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css" integrity="sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz" crossorigin="anonymous">
+    <!-- Import Bootstap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Import Style CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Import Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Import Lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="assets/dashboard.svg" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Visualizations</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="leaflet.html">Geograhical Map</a>
+                            <a class="dropdown-item" href="bar_chart.html">Bar Chart</a>
+                            <a class="dropdown-item" href="scatter_plot.html">Scatter Plot</a>
+                            <a class="dropdown-item" href="line_graph.html">Line Graph</a>
+                            <a class="dropdown-item" href="dashboard.html">Dashboard</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <br>
+    <br>
+    <br>
+    <div class="jumbotron">
+
+        <h1 class="Text_align">
+            ‘Alarming increase’: California traffic accidents surge above pre-pandemic levels
+        </h1>
+
+        <h6>
+            <p>
+                From our data, the safest States in terms of number of accidents during the pandemic have been Wyoming(WY), Vermont(VT), Maine(ME) and West Virginia(WV). Whereas the top five States with the most accidents have been California(CA), Florida(FL), Texas(TX),North
+                Carolina(NC) and South Carolina(SC). In almost all the states, majority of the accidents occurred during the day.
+            </p>
+            <p>
+                When we compared the data to the same months before the pandemic(from March to June), we observed that for majority of the states(especially the States with generally low accident counts), there were fewer accidents. However, California and Florida absolutely
+                shattered this rule as California's accidents almost doubled during the pandemic.</p>
+
+        </h6>
+
+    </div>
+
+
+    <!-- Insert Bar Chart -->
+    <div class="card container-fluid" style="margin-top:25px; margin-bottom: 25px;">
+        <br>
+        <div class="row">
+            <!-- 2020 barchart -->
+            <div class="card bg-light mb-3 " style="margin: auto;">
+                <div class="card-body">
+                    <div class="col-md-8 col-sm-12">
+                        <div style="text-align: left;">
+                            <!-- <h3>United States road accidents by state post-pandemic data</h3> -->
+                            <label for="monthFilter">Select A Month:</label>
+                            <select id="monthFilter">
+                        <option value="4 month total">all month total</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                  </select>
+                        </div>
+                        <div id="BarAccident" class="container-fluid"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- this is the break text -->
+        <div class="row">
+            <div class="col-lg-3" style="margin: auto;">
+                <img class="rounded-circle" src="assets/decrease.svg" alt="Generic placeholder image" width="80" height="80">
+                <h2>Consistent Bar trends</h2>
+                <p>Generally it might be safer to travel at night, accidents have nearly doubled in california since the pandemic, California is by far the least safe state to drive, and lockdown has reduced accident rates in nearly every state.</p>
+
+            </div>
+
+            <div class="col-lg-3" style="margin: auto;">
+                <img class="rounded-circle" src="assets/website_link.png" alt="Generic placeholder image" width="80" height="80">
+                <h2>News source</h2>
+                <p>Los Angeles Times news summary: Drivers are speeding because streets are empty, and a higher number of pedestrians </p>
+                <p><a class="btn btn-secondary" href="https://www.latimes.com/california/story/2020-05-14/traffic-deaths-speeding-los-angeles-coronavirus-pandemic-vision-zero" target="_blank" role="button">View website&raquo;</a></p>
+            </div>
+        </div>
+        <!-- 2019 barchart -->
+        <div class="row">
+            <div class="card bg-light mb-3" style="margin: auto;">
+                <div class="col-md-8 col-sm-12">
+                    <div class="card-body">
+
+                        <div style="text-align: left;">
+                            <!-- <h3>United States accidents by state pre-covid data</h3> -->
+                            <label for="monthFilter2019">Select A Month:</label>
+                            <select id="monthFilter2019">
+                            <option value="4 month total">all month total</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                    
+                        </select>
+                        </div>
+                        <div id="BarAccident2019" class="container-fluid"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="static/js/bar_chart_DO.js"></script>
+    <script type="text/javascript" src="static/js/bar_chart_DO_2019.js"></script>
+</body>
+
+</html>
