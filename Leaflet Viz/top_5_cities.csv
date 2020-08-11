@@ -1,0 +1,233 @@
+,State,City,Accidents
+26,AL,Birmingham,731
+176,AL,Montgomery,664
+133,AL,Huntsville,510
+173,AL,Mobile,399
+251,AL,Tuscaloosa,257
+410,AZ,Tucson,4569
+379,AZ,Phoenix,3994
+345,AZ,Glendale,619
+395,AZ,Scottsdale,483
+406,AZ,Tempe,480
+289,AR,Little Rock,54
+297,AR,North Little Rock,23
+292,AR,Marion,16
+304,AR,West Memphis,13
+272,AR,Benton,13
+906,CA,Los Angeles,7893
+1174,CA,Sacramento,4416
+1186,CA,San Diego,2669
+1193,CA,San Jose,1987
+1042,CA,Oakland,1647
+1436,CO,Denver,2580
+1429,CO,Colorado Springs,786
+1407,CO,Aurora,510
+1447,CO,Englewood,297
+1498,CO,Littleton,168
+1599,CT,Hartford,179
+1612,CT,Milford,81
+1568,CT,Bridgeport,72
+1584,CT,East Hartford,60
+1675,CT,Waterbury,56
+1724,DE,Wilmington,288
+1717,DE,Newark,162
+1716,DE,New Castle,152
+1698,DE,Claymont,72
+1695,DE,Bear,62
+1694,DC,Washington,1041
+1691,DC,Capitol Heights,2
+1693,DC,Temple Hills,2
+1692,DC,Takoma Park,1
+2002,FL,Orlando,2325
+1953,FL,Miami,2000
+2093,FL,Tampa,1453
+1894,FL,Jacksonville,1335
+1839,FL,Fort Lauderdale,1220
+2150,GA,Atlanta,2256
+2153,GA,Augusta,658
+2204,GA,Decatur,360
+2322,GA,Savannah,304
+2271,GA,Macon,203
+2483,ID,Boise,20
+2510,ID,Nampa,16
+2516,ID,Rathdrum,15
+2508,ID,Meridian,13
+2489,ID,Coeur D Alene,8
+2585,IL,Chicago,2633
+2628,IL,Elgin,212
+2631,IL,Elmhurst,196
+2612,IL,Downers Grove,195
+2529,IL,Addison,175
+2982,IN,Indianapolis,1331
+2959,IN,Gary,186
+3000,IN,Merrillville,85
+2956,IN,Fort Wayne,79
+2972,IN,Hammond,77
+2406,IA,Des Moines,205
+2474,IA,West des Moines,38
+2465,IA,Urbandale,37
+2394,IA,Cedar Rapids,36
+2399,IA,Council Bluffs,32
+3066,KS,Kansas City,248
+3072,KS,Overland Park,151
+3079,KS,Wichita,87
+3068,KS,Lenexa,80
+3074,KS,Shawnee,61
+3109,KY,Louisville,1487
+3108,KY,Lexington,261
+3086,KY,Covington,177
+3098,KY,Ft Mitchell,100
+3094,KY,Erlanger,62
+3139,LA,Baton Rouge,2525
+3191,LA,New Orleans,1791
+3208,LA,Shreveport,417
+3179,LA,Lafayette,396
+3188,LA,Metairie,123
+3707,ME,Freeport,5
+3738,ME,Wells,4
+3731,ME,Scarborough,4
+3727,ME,Portland,4
+3716,ME,Kittery,4
+3477,MD,Baltimore,1260
+3659,MD,Silver Spring,616
+3583,MD,Hyattsville,350
+3483,MD,Bethesda,347
+3650,MD,Rockville,316
+3254,MA,Boston,405
+3282,MA,Dorchester,240
+3389,MA,Quincy,112
+3349,MA,Methuen,97
+3457,MA,Weston,90
+3792,MI,Detroit,877
+3818,MI,Grand Rapids,702
+3808,MI,Flint,309
+3831,MI,Highland Park,96
+3832,MI,Holland,90
+4238,MN,Minneapolis,2219
+4335,MN,Saint Paul,1814
+4021,MN,Burnsville,171
+4246,MN,Monticello,136
+4113,MN,Forest Lake,126
+4558,MS,Jackson,44
+4553,MS,Hattiesburg,35
+4581,MS,Southaven,24
+4566,MS,Moss Point,20
+4570,MS,Oxford,18
+4508,MO,Saint Louis,1065
+4463,MO,Kansas City,818
+4513,MO,Springfield,199
+4505,MO,Saint Charles,91
+4461,MO,Independence,88
+4592,MT,Marion,1
+4962,NE,Omaha,583
+4937,NE,Bellevue,104
+4948,NE,Gretna,52
+4964,NE,Papillion,49
+4954,NE,La Vista,24
+5521,NV,Reno,226
+5526,NV,Sparks,113
+5493,NV,Carson City,65
+5497,NV,Elko,25
+5504,NV,Glenbrook,22
+5033,NH,Manchester,53
+5040,NH,Nashua,41
+5031,NH,Londonderry,36
+4995,NH,Concord,23
+5036,NH,Merrimack,20
+5307,NJ,Newark,309
+5234,NJ,Jersey City,128
+5167,NJ,East Orange,109
+5190,NJ,Fort Lee,106
+5417,NJ,Trenton,92
+5457,NM,Albuquerque,237
+5470,NM,Laguna,9
+5471,NM,Las Cruces,6
+5483,NM,Tijeras,4
+5466,NM,Grants,4
+5990,NY,Rochester,2720
+5908,NY,New York,929
+5601,NY,Bronx,918
+6066,NY,Syracuse,747
+5604,NY,Brooklyn,742
+4638,NC,Charlotte,8267
+4831,NC,Raleigh,3443
+4706,NC,Greensboro,545
+4929,NC,Winston Salem,523
+4698,NC,Garner,436
+4934,ND,Jamestown,1
+6198,OH,Cincinnati,1554
+6210,OH,Dayton,1379
+6205,OH,Columbus,1128
+6202,OH,Cleveland,969
+6399,OH,Toledo,242
+6477,OK,Oklahoma City,4196
+6490,OK,Tulsa,1708
+6455,OK,Edmond,185
+6498,OK,Yukon,155
+6450,OK,Choctaw,28
+6712,OR,Portland,2726
+6732,OR,Salem,429
+6521,OR,Bend,365
+6588,OR,Eugene,272
+6557,OR,Corbett,264
+7274,PA,Philadelphia,1237
+7449,PA,York,652
+7278,PA,Pittsburgh,645
+7105,PA,Lancaster,520
+7433,PA,Willow Grove,252
+7476,RI,Providence,380
+7483,RI,Warwick,105
+7474,RI,Pawtucket,100
+7460,RI,Cranston,56
+7467,RI,Johnston,34
+7599,SC,Greenville,2205
+7543,SC,Columbia,1400
+7751,SC,Spartanburg,757
+7493,SC,Anderson,578
+7601,SC,Greer,476
+7792,SD,Sioux Falls,1
+7910,TN,Nashville,3554
+7901,TN,Memphis,1376
+7822,TN,Chattanooga,658
+7796,TN,Antioch,519
+7896,TN,Madison,304
+8080,TX,Houston,4626
+8024,TX,Dallas,4047
+7974,TX,Austin,2899
+8180,TX,San Antonio,1787
+8039,TX,El Paso,1616
+8355,UT,Salt Lake City,1334
+8334,UT,Ogden,463
+8394,UT,West Valley City,462
+8393,UT,West Jordan,189
+8289,UT,Heber City,160
+8723,VT,Putney,7
+8739,VT,Williamstown,5
+8700,VT,Bethel,4
+8736,VT,Waterbury,4
+8722,VT,Newport,3
+8622,VA,Richmond,3797
+8529,VA,Henrico,1049
+8573,VA,Midlothian,397
+8402,VA,Alexandria,365
+8589,VA,Norfolk,352
+8890,WA,Seattle,1558
+8907,WA,Tacoma,311
+8795,WA,Everett,198
+8752,WA,Bellevue,170
+8901,WA,Spokane,155
+9084,WV,Inwood,11
+9080,WV,Falling Waters,7
+9087,WV,Martinsburg,6
+9077,WV,Bridgeport,4
+9079,WV,Charleston,4
+9013,WI,Milwaukee,690
+9001,WI,Madison,134
+8943,WI,Brookfield,67
+9064,WI,Waukesha,60
+9021,WI,Oak Creek,48
+9097,WY,Cheyenne,3
+9096,WY,Casper,1
+9098,WY,Evanston,1
+9099,WY,Fort Bridger,1
+9100,WY,Glenrock,1
